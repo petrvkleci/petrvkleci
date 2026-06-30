@@ -1,0 +1,757 @@
+:root {
+    --bg-color: #1a1622; 
+    --surface-color: #272236; 
+    --surface-hover: #322b46; 
+    --text-main: #f4f1f8;
+    --text-muted: #a39bb3;
+    --accent: #9d4edd; 
+    --accent-glow: rgba(157, 78, 221, 0.6);
+    --glass-border: rgba(157, 78, 221, 0.3);
+    --nav-height: 70px; 
+}
+
+::-webkit-scrollbar {
+    width: 8px;
+}
+::-webkit-scrollbar-track { background: var(--bg-color); }
+::-webkit-scrollbar-thumb { background: var(--accent); border-radius: 4px; }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            font-family: 'Inter', sans-serif;
+            overflow-x: hidden;
+            position: relative;
+        }
+
+        /* CYBER MŘÍŽKA NA POZADÍ */
+        .cyber-grid {
+            position: fixed;
+            top: 0; left: 0; width: 100vw; height: 100vh;
+            background-image: 
+                linear-gradient(rgba(157, 78, 221, 0.04) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(157, 78, 221, 0.04) 1px, transparent 1px);
+            background-size: 50px 50px;
+            z-index: -1;
+            transform: perspective(1000px) rotateX(60deg) translateY(-100px) translateZ(-200px);
+            animation: gridMove 20s linear infinite;
+            opacity: 0.5;
+        }
+
+        @keyframes gridMove {
+            0% { transform: perspective(1000px) rotateX(60deg) translateY(0) translateZ(-200px); }
+            100% { transform: perspective(1000px) rotateX(60deg) translateY(50px) translateZ(-200px); }
+        }
+
+        /* AMBIENT BLOB */
+        .ambient-blob {
+            position: fixed;
+            top: 0; left: 0; width: 600px; height: 600px;
+            background: radial-gradient(circle, rgba(157, 78, 221, 0.1) 0%, rgba(26, 22, 34, 0) 60%);
+            border-radius: 50%;
+            pointer-events: none;
+            z-index: 0;
+            transform: translate(-50%, -50%);
+            filter: blur(80px);
+        }
+
+        section, article {
+            scroll-margin-top: calc(var(--nav-height) + 20px);
+            position: relative;
+            z-index: 10;
+        }
+
+        /* PROGRESS BAR */
+        .scroll-progress {
+            position: fixed;
+            top: 0; left: 0; height: 3px;
+            background: var(--accent);
+            width: 0%;
+            z-index: 2000;
+            box-shadow: 0 0 15px var(--accent-glow);
+        }
+
+        /* NAVIGACE */
+        nav {
+            position: fixed;
+            top: 0; width: 100%; height: var(--nav-height);
+            padding: 0 40px;
+            display: flex; justify-content: space-between; align-items: center;
+            background: rgba(26, 22, 34, 0.9);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            z-index: 1000;
+            border-bottom: 1px solid var(--glass-border);
+        }
+
+        .logo-container { height: 40px; }
+        .logo-img { height: 100%; width: auto; object-fit: contain; }
+
+        .nav-links { display: flex; gap: 30px; }
+        .nav-links a {
+            color: var(--text-main); text-decoration: none; font-weight: 800;
+            font-size: 0.85rem; letter-spacing: 2px; text-transform: uppercase;
+            position: relative; padding: 5px 0; transition: color 0.3s;
+        }
+        .nav-links a:hover { color: var(--accent); text-shadow: 0 0 10px var(--accent-glow); }
+
+        /* ČISTÝ HERO ÚVOD (BEZ ANIMACÍ A GLITCHŮ) */
+        header {
+            height: 70vh; /* Menší výška úvodu */
+            display: flex; flex-direction: column;
+            justify-content: center; align-items: center; text-align: center;
+            position: relative; z-index: 10;
+        }
+
+        header a {
+            text-decoration: none;
+        }
+
+        main a{
+            text-decoration: none;
+        }
+        .main-title {
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: 8vw; 
+            letter-spacing: 6px; 
+            line-height: 1;
+            color: #ffffff;
+            text-shadow: 0 0 30px rgba(157, 78, 221, 0.3);
+        }
+
+        .subtitle {
+            font-size: 1.1rem; color: var(--text-muted);
+            text-transform: uppercase; letter-spacing: 6px;
+            margin-top: 15px; font-weight: 600;
+        }
+
+        /* ČISTÉ KINEMATICKÉ ODHALOVÁNÍ SEKCÍ */
+        .hidden-cinematic {
+            opacity: 0;
+            filter: blur(15px);
+            transform: translateY(50px);
+            transition: opacity 1s cubic-bezier(0.19, 1, 0.22, 1), 
+                        filter 1s cubic-bezier(0.19, 1, 0.22, 1), 
+                        transform 1s cubic-bezier(0.19, 1, 0.22, 1);
+        }
+
+        .show-cinematic {
+            opacity: 1; filter: blur(0); transform: translateY(0);
+        }
+
+
+        /* HOVER EFEKT SCANLINE */
+            .part-content, .media-box {
+            background: var(--surface-color);
+            border: 1px solid var(--glass-border);
+            border-radius: 4px; 
+            overflow: hidden; position: relative;
+            transition: all 0.3s ease;
+        }
+
+        .part-content::after, .media-box::after {
+            content: ''; position: absolute; top: -150%; left: -50%;
+            width: 200%; height: 40px;
+            background: linear-gradient(to bottom, transparent, rgba(157, 78, 221, 0.5), transparent);
+            transform: rotate(30deg);
+            transition: top 0s; z-index: 5; pointer-events: none; opacity: 0;
+        }
+
+        .part-content:hover::after, .media-box:hover::after {
+            top: 200%; transition: top 0.7s ease-in-out; opacity: 1;
+        }
+
+        .part-content:hover, .media-box:hover {
+            border-color: var(--accent);
+            box-shadow: 0 0 30px rgba(157, 78, 221, 0.25);
+            transform: translateY(-5px);
+            background: var(--surface-hover);
+        }
+
+        /* TURNAJE */
+        .container {
+            max-width: 1300px; margin: 0 auto; padding: 0 30px 100px 30px;
+            display: flex; flex-direction: column; gap: 100px; /* Menší mezery mezi turnaji */
+        }
+
+        .saga-part {
+            display: grid; grid-template-columns: 1.1fr 0.9fr; gap: 40px; align-items: stretch;
+        }
+
+        .saga-part:nth-child(even) { grid-template-columns: 0.9fr 1.1fr; }
+        .saga-part:nth-child(even) .part-content { order: 2; }
+        .saga-part:nth-child(even) .media-box { order: 1; }
+
+        .part-content { padding: 45px; border-left: 5px solid var(--accent); }
+        
+        .part-number {
+            position: absolute; top: -30px; right: 20px;
+            font-family: 'Bebas Neue', sans-serif; font-size: 10rem;
+            color: rgba(157, 78, 221, 0.04); line-height: 1; pointer-events: none;
+        }
+
+        .part-content h2 { font-family: 'Bebas Neue', sans-serif; font-size: 3.5rem; letter-spacing: 2px; margin-bottom: 15px; }
+        .part-content p { font-size: 1.1rem; line-height: 1.7; color: var(--text-muted); margin-bottom: 30px; }
+
+        .stats-grid {
+            display: grid; grid-template-columns: 1fr 1fr; gap: 20px;
+            padding-top: 20px; border-top: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .stat-item h4 { color: var(--accent); font-size: 0.8rem; text-transform: uppercase; letter-spacing: 3px; margin-bottom: 5px; }
+        .stat-item p { color: #fff; font-size: 1.3rem; font-weight: 800; font-family: 'Bebas Neue', sans-serif; letter-spacing: 1px; }
+
+        /* KARTY MÉDIÍ */
+        .media-box {
+            background: #1c1826; min-height: 350px;
+            display: flex; justify-content: center; align-items: center;
+        }
+
+        .media-box::before {
+            font-family: 'Inter', sans-serif; font-weight: 800; font-size: 1rem;
+            color: #4b4263; letter-spacing: 4px;
+        }
+
+        /* BUDOUCNOST - KLEC 6 */
+        .future-part {
+            grid-template-columns: 1fr !important; text-align: center; padding: 80px 30px;
+            background: repeating-linear-gradient(45deg, #1c1826, #1c1826 10px, #15121e 10px, #15121e 20px);
+            border: 2px dashed var(--accent);
+            animation: borderPulse 4s infinite;
+        }
+
+.hero {
+    position: relative;
+    height: calc(100vh - var(--nav-height));
+    margin-top: var(--nav-height); /* 👈 toto zajistí, že je POD nav */
+    overflow: hidden;
+    margin-bottom: 80px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.hero-video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0.7;
+    object-fit: cover;
+    z-index: 1;
+}
+
+.hero-overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(0,0,0,0.55);
+    z-index: 2;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 3;
+    text-decoration: none;
+}
+
+        @keyframes borderPulse {
+            0%, 100% { border-color: rgba(157, 78, 221, 0.3); }
+            50% { border-color: rgba(157, 78, 221, 0.8); box-shadow: 0 0 30px rgba(157, 78, 221, 0.2); }
+        }
+
+        .future-part h2 { font-size: 5rem; color: var(--accent); letter-spacing: 4px; }
+        .future-part p { font-size: 1.3rem; font-weight: 600; color: #fff; max-width: 700px; margin: 20px auto 0 auto; letter-spacing: 2px; }
+
+        footer {
+            text-align: center; padding: 50px; background: #0f0d14;
+            border-top: 1px solid var(--glass-border); color: #4b4263;
+            font-size: 0.9rem; letter-spacing: 4px; text-transform: uppercase; font-weight: 800;
+        }
+
+        @media (max-width: 1024px) {
+
+    /* NAV */
+    .nav-links {
+        display: none;
+    }
+
+    nav {
+        padding: 0 20px;
+    }
+
+    /* HERO */
+    
+
+    .main-title {
+        font-size: 12vw;
+        letter-spacing: 3px;
+    }
+
+    .subtitle {
+        font-size: 0.9rem;
+        letter-spacing: 3px;
+        margin-top: 10px;
+    }
+
+    /* CYBER GRID OFF (mobile výkon + čistota) */
+    .cyber-grid {
+        display: none;
+    }
+
+    /* CONTAINER */
+    .container {
+        padding: 0 15px 60px 15px;
+        gap: 60px;
+    }
+
+    /* SAGA LAYOUT -> vždy pod sebou */
+    .saga-part,
+    .saga-part:nth-child(even) {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .saga-part:nth-child(even) .part-content,
+    .saga-part:nth-child(even) .media-box {
+        order: unset;
+    }
+
+    /* TEXT BLOKY */
+    .part-content {
+        padding: 25px;
+        border-left: 3px solid var(--accent);
+    }
+
+    .part-content h2 {
+        font-size: 2.2rem;
+    }
+
+    .part-content p {
+        font-size: 1rem;
+        line-height: 1.6;
+    }
+
+    /* VELKÉ ČÍSLO - jinak překáží */
+    .part-number {
+        font-size: 6rem;
+        top: -20px;
+        right: 10px;
+        opacity: 0.08;
+    }
+
+    /* STATY */
+    .stats-grid {
+        grid-template-columns: 1fr;
+        gap: 10px;
+    }
+
+    .stat-item p {
+        font-size: 1.1rem;
+    }
+
+    /* MEDIA */
+    .media-box {
+        min-height: 220px;
+    }
+
+    /* FUTURE PART */
+    .future-part {
+        padding: 50px 15px;
+    }
+
+    .future-part h2 {
+        font-size: 2.5rem;
+    }
+
+    .future-part p {
+        font-size: 1rem;
+        letter-spacing: 1px;
+    }
+
+    .hero {
+        height: auto;
+        min-height: 85vh;
+    }
+
+    .cdown {
+        padding: 40px 15px;
+        width: 100%;
+    }
+
+ 
+
+    .cdown-grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 15px;
+        width: 100%;
+        margin-bottom: 25px;
+    }
+
+    .cunit {
+        padding: 10px 8px;
+        border-radius: 12px;
+
+    }
+
+    .cunit:last-child {
+        border-right: 1px solid rgba(157,78,221,.2);
+    }
+
+    .cunit-n {
+       font-size: clamp(1.8rem, 7vw, 3rem);
+        line-height: 1;
+    }
+
+    .cunit-l {
+         font-size: 0.6rem;
+    letter-spacing: 0.08em;
+        margin-top: 8px;
+    }
+
+    .cdown-date {
+        font-size: 0.8rem;
+        letter-spacing: 0.15em;
+        padding: 0 10px;
+    }
+
+}
+
+/* COUNTDOWN */
+.cdown{
+  background:var(--s1);
+  border-top:1px solid var(--bdr);border-bottom:1px solid var(--bdr);
+  padding:88px 40px;text-align:center;
+  position:relative;overflow:hidden;
+  margin-top: 50px;
+}
+.cdown::before{
+  position:absolute;top:50%;left:50%;
+  transform:translate(-50%,-50%);
+  font-family:var(--fd);font-size:22vw;
+  color:rgba(255,255,255,.013);
+  white-space:nowrap;pointer-events:none;user-select:none
+}
+.cdown-sup{
+  font-family:var(--fh);font-size:.68rem;
+  letter-spacing:.42em;text-transform:uppercase;
+  color:var(--red);margin-bottom:14px
+}
+.cdown-event{
+  font-family:'Bebas Neue', sans-serif;
+  font-size: 4em;
+  letter-spacing:.03em;
+  margin-bottom:56px;
+  line-height:1;
+}
+.cdown-grid {
+    display:flex;
+    flex-wrap:wrap;
+    justify-content:center;
+    margin-bottom:50px;
+}
+.cunit{padding:0 44px;border-right:1px solid var(--bdr)}
+.cunit:last-child{border-right:none}
+.cunit-n{
+  font-family:'Bebas Neue', sans-serif;
+  font-size:clamp(2rem,8vw,6rem);
+  font-weight:900;
+  color:#fff;
+  letter-spacing:2px;
+  text-shadow:
+      0 0 10px rgba(157,78,221,.6),
+      0 0 25px rgba(157,78,221,.4);
+}
+
+.cunit-n.flip{transform:scaleY(0)}
+.cunit-l{
+  font-family:var(--fh);font-size:.6rem;
+  letter-spacing:.3em;text-transform:uppercase;
+  color:var(--g);margin-top:6px;display:block
+}
+.cdown-date{
+  font-family:var(--fh);font-size:.82rem;
+  letter-spacing:.28em;color:var(--md)
+}
+
+
+hr{
+    margin: 50px;
+    border-color: #9d4edd;
+}
+
+/* ==========================================
+   FIGHT CARD
+========================================== */
+
+.fight-card{
+    max-width:1400px;
+    margin:0 auto;
+    padding:0 30px 120px;
+    position:relative;
+}
+
+.fight-card-header{
+    text-align:center;
+    margin-bottom:60px;
+}
+
+.fight-card-header span{
+    color:var(--accent);
+    letter-spacing:4px;
+    font-size:.8rem;
+    font-weight:800;
+}
+
+.fight-card-header h1{
+    font-family:'Bebas Neue',sans-serif;
+    font-size:clamp(3rem,8vw,7rem);
+    letter-spacing:4px;
+    margin:10px 0;
+    text-shadow:
+        0 0 15px rgba(157,78,221,.5),
+        0 0 40px rgba(157,78,221,.3);
+}
+
+.fight-card-header p{
+    color:var(--text-muted);
+    letter-spacing:3px;
+}
+
+.fight{
+    position:relative;
+
+    display:grid;
+    grid-template-columns:1fr 450px 1fr;
+    align-items:center;
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(157,78,221,.08),
+            rgba(0,0,0,0)
+        );
+
+    border:1px solid var(--glass-border);
+    border-radius:20px;
+
+    overflow:hidden;
+
+    backdrop-filter:blur(10px);
+
+    min-height:600px;
+}
+
+/* glow */
+.fight::before{
+    content:"";
+    position:absolute;
+    inset:0;
+    background:
+        radial-gradient(
+            circle at center,
+            rgba(157,78,221,.15),
+            transparent 70%
+        );
+    pointer-events:none;
+}
+
+.fight::after{
+    content:"VS";
+    position:absolute;
+    left:50%;
+    top:50%;
+    transform:translate(-50%,-50%);
+    font-family:'Bebas Neue',sans-serif;
+    font-size:10rem;
+    color:rgba(255,255,255,.04);
+    z-index:1;
+}
+
+/* fighters */
+
+.fighter{
+    position:relative;
+    z-index:2;
+    text-align:center;
+    padding:40px;
+}
+
+.fighter img{
+    width:100%;
+    max-width:380px;
+    transition:.4s;
+    filter:
+        drop-shadow(0 0 30px rgba(157,78,221,.4));
+    border-radius: 5px;
+}
+
+.fighter:hover img{
+    transform:scale(1.05);
+}
+
+.fighter h2{
+    margin-top:15px;
+    font-family:'Bebas Neue',sans-serif;
+    font-size:3rem;
+    letter-spacing:3px;
+}
+
+.fighter-left h2{
+    color:white;
+}
+
+
+
+/* stats */
+
+.fight-info{
+    position:relative;
+    z-index:2;
+
+    display:flex;
+    flex-direction:column;
+    gap:20px;
+}
+
+.stat-row{
+    display:grid;
+    grid-template-columns: 1fr auto 1fr;
+    align-items:center;
+
+    padding:20px;
+    background:rgba(255,255,255,.03);
+    border:1px solid rgba(255,255,255,.05);
+    backdrop-filter:blur(20px);
+}
+
+/* label přes celou šířku nahoře */
+.stat-row{
+    display:grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto auto;
+    align-items:center;
+
+    padding:20px 55px;
+    background:rgba(255,255,255,.03);
+    border:1px solid rgba(255,255,255,.05);
+    backdrop-filter:blur(20px);
+    gap:10px 20px;
+    border-radius: 5px;
+}
+
+/* název statistiky */
+.stat-row span{
+    grid-column:1 / -1;
+    text-align:center;
+
+    color:var(--accent);
+    font-size:.75rem;
+    font-weight:800;
+    letter-spacing:3px;
+    text-transform:uppercase;
+}
+
+/* levá hodnota */
+.stat-row h3:first-of-type{
+    justify-self:start;
+    text-align:left;
+}
+
+/* pravá hodnota */
+.stat-row h3:last-of-type{
+    justify-self:end;
+    text-align:right;
+}
+
+.stat-row h3{
+    font-family:'Bebas Neue',sans-serif;
+    font-size:2rem;
+    letter-spacing:2px;
+    margin:0;
+}
+
+/* corner lights */
+
+.fight-card::before{
+    content:"";
+    position:absolute;
+    width:300px;
+    height:300px;
+    background:var(--accent);
+    opacity:.08;
+    filter:blur(120px);
+
+    top:120px;
+    left:-100px;
+}
+
+.fight-card::after{
+    content:"";
+    position:absolute;
+    width:300px;
+    height:300px;
+    background:#ff4444;
+    opacity:.06;
+    filter:blur(120px);
+
+    right:-100px;
+    top:200px;
+}
+.fight-label{
+    position:absolute;
+    left:50%;
+    bottom:50px;        /* 👈 je POD statistikami uvnitř karty */
+    transform:translateX(-50%);
+
+    font-size:.85rem;
+    font-weight:900;
+    letter-spacing:4px;
+    color:var(--accent);
+    text-transform:uppercase;
+
+    opacity:.9;
+}
+
+.ginger {
+    color: #ffb347;
+    text-shadow:
+        0 0 5px #ff8c00,
+        0 0 10px #ff8c00,
+        0 0 20px #ff8c00,
+        0 0 40px #ff6600;
+    animation: pulse 1.5s infinite ease-in-out;
+}
+
+@keyframes pulse {
+    0%, 100% {
+        text-shadow:
+            0 0 5px #ff8c00,
+            0 0 10px #ff8c00,
+            0 0 20px #ff8c00,
+            0 0 40px #ff6600;
+    }
+    50% {
+        text-shadow:
+            0 0 10px #ff8c00,
+            0 0 20px #ff8c00,
+            0 0 40px #ff8c00,
+            0 0 80px #ff6600;
+    }
+}
+
+.logo-pvk{
+    display: flex;
+    justify-content: center;
+    margin: 90px 0 90px 0;
+    
+}
