@@ -1,12 +1,5 @@
 # 🥊 Petr v Kleci
 
-🚀 Webový projektový profil | 🌐 GitHub Pages | 💻 Vývojář webů
-
----
-
-## 🌐 Live web
-👉 https://petrvkleci.fun
-
 ---
 
 ## 🛠️ Technologie
@@ -29,9 +22,11 @@
 
 ## 📫 Kontakt
 - 🌐 Web: https://petrvkleci.fun
+- 🚀 Instagram: https://instagram.com/petrvkleci
+- 🔴 YouTube: https://youtube.come/@petrvkleci
 - 📧 Email: petrvkleci@petrvkleci.fun
 - 🐙 GitHub: https://github.com/petrvkleci
-- 🚀 Instagram: https://instagram.com/petrvkleci
+
 
 ---
 
