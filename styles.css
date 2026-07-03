@@ -23,6 +23,12 @@
     scroll-behavior: smooth;
 }
 
+html,
+body {
+    width: 100%;
+    overflow-x: hidden;
+}
+
 body {
     background-color: var(--bg-color);
     color: var(--text-main);
@@ -310,23 +316,26 @@ footer {
     }
 
     .cdown {
-        padding: 40px 15px;
+        padding: 10px 15px;
         width: 100%;
     }
 
-    .cdown-grid {
-        display: grid;
-        grid-template-columns: repeat(2, 1fr);
-        gap: 15px;
-        width: 100%;
-        margin-bottom: 25px;
-    }
+    .cdown-grid{
+    display:flex;
+    justify-content:center;
+    gap:0px;
+    flex-wrap:nowrap;
+    margin-bottom:25px;
+}
 
-    .cunit {
-        padding: 10px 8px;
-        border-radius: 12px;
+.cunit{
+    padding:0 10px;
+    border-right:1px solid rgba(157,78,221,.2);
+}
 
-    }
+.cunit:last-child{
+    border-right:none;
+}
 
     .cunit:last-child {
         border-right: 1px solid rgba(157,78,221,.2);
@@ -339,7 +348,7 @@ footer {
 
     .cunit-l {
          font-size: 0.6rem;
-    letter-spacing: 0.08em;
+        letter-spacing: 0.08em;
         margin-top: 8px;
     }
 
@@ -656,6 +665,17 @@ hr{
     color: var(--accent);
 }
 @media (max-width: 768px) {
+
+    /* ================= GLOBAL FIX (overflow pruh vpravo) ================= */
+    html, body {
+        overflow-x: hidden;
+    }
+
+    * {
+        box-sizing: border-box;
+    }
+
+    /* ================= HERO ================= */
     .hero {
         min-height: 70vh;
         height: auto;
@@ -666,69 +686,46 @@ hr{
         padding: 15px;
     }
 
+    /* ================= COUNTDOWN ================= */
     .cdown {
-    padding: 60px 15px;
-}
-
-.cdown-event {
-    font-size: 2.8rem;
-    margin-bottom: 30px;
-}
-
-.cunit-n {
-    font-size: 3rem;
-}
-
-.cunit-l {
-    font-size: 0.75rem;
-    letter-spacing: 0.1em;
-}
-
-.cdown-date {
-    font-size: 1rem;
-}
-
-    .fight {
-        grid-template-columns: 1fr 1.5fr 1fr;
-        min-height: auto;
-        padding: 15px;
-        gap: 10px;
+        padding: 60px 15px;
     }
 
-    .fighter {
-        padding: 15px;
+    .cdown-event {
+        font-size: 2.8rem;
+        margin-bottom: 25px;
     }
 
-    .fighter img {
-        max-width: 180px;
+    .cdown-grid {
+        display: flex;
+        justify-content: center;
+        gap: 6px;
+        flex-wrap: nowrap;
+        margin-bottom: 20px;
     }
 
-    .fighter h2 {
-        font-size: 1.6rem;
+    .cunit {
+        padding: 0 10px;
     }
 
-    .fight::after {
-        font-size: 4rem;
-        opacity: 0.05;
+    .cunit:last-child {
+        border-right: none;
     }
 
-    .stat-row {
-        padding: 12px 20px;
+    .cunit-n {
+        font-size: 3rem;
     }
 
-    .stat-row h3 {
-        font-size: 1.3rem;
-    }
-
-    .stat-row span {
-        font-size: 0.65rem;
-    }
-
-    .fight-label {
-        bottom: 20px;
+    .cunit-l {
         font-size: 0.7rem;
+        letter-spacing: 0.1em;
     }
 
+    .cdown-date {
+        font-size: 0.95rem;
+    }
+
+    /* ================= NAV ================= */
     nav {
         padding: 0 15px;
     }
@@ -737,20 +734,103 @@ hr{
         display: none;
     }
 
-    .footer-container {
-        flex-direction: column;
+    /* ================= FIGHT CARD FIX ================= */
+    .fight {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-areas:
+            "left right"
+            "info info";
+        gap: 8px;
+        padding: 10px;
+        align-items: start;
+    }
+
+    .fighter {
         text-align: center;
+        padding: 0;
+    }
+
+    .fighter img {
+        max-width: 190px;
+        width: 100%;
+        margin: 30px auto;
+        display: block;
+    }
+
+    .fighter h2 {
+        font-size: 1.35rem;
+        margin-top: 6px;
+        line-height: 1.1;
+    }
+
+    /* ================= STATS TABLE ================= */
+    .fight-info {
+        grid-area: info;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        flex-direction: column;
+        gap: 6px;
+    }
+
+    .stat-row {
+        padding: 8px 10px;
+        margin: 0;
+    }
+
+    .stat-row span {
+        font-size: 0.6rem;
+        letter-spacing: 1px;
+    }
+
+    .stat-row h3 {
+        font-size: 0.95rem;
+    }
+
+    .stat-row h3:first-of-type {
+        justify-self: start;
+        padding-left: 8px;
+    }
+
+    .stat-row h3:last-of-type {
+        justify-self: end;
+        padding-right: 8px;
+    }
+
+    /* ================= VS ================= */
+    .fight::after {
+        font-size: 3rem;
+        opacity: 0.03;
+    }
+
+    .fight-label {
+        display: none;
+    }
+
+    /* ================= FOOTER ================= */
+    footer {
+        padding: 25px 15px;
+        font-size: 0.8rem;
+    }
+
+    .footer-container {
+        text-align: center;
+        gap: 10px;
     }
 
     .footer-contact {
-        justify-content: center;
-        flex-wrap: wrap;
+        margin: 0 0 10px 0;
+        font-size: 0.85rem;
     }
-    .fight-label {
-    display: none;
+
+    .footer-bottom {
+        font-size: 0.7rem;
+        opacity: 0.75;
+    }
 }
 
-}
+
 .hero {
     position: relative;
     height: calc(100vh - var(--nav-height));
