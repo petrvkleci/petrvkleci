@@ -4,8 +4,8 @@
 
 ## 📫 Kontakt - Petr v Kleci
 - 🌐 Web: https://petrvkleci.fun
-- 🚀 Instagram: https://instagram.com/petrvkleci
-- 🔴 YouTube: https://youtube.come/@petrvkleci
+- 🚀 Instagram: https://instagram.petrvkleci.fun
+- 🔴 YouTube: https://youtube.petrvkleci.fun
 - 📧 Email: petrvkleci@petrvkleci.fun
 - 🐙 GitHub: https://github.com/petrvkleci
 
