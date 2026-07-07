@@ -40,9 +40,6 @@ body {
 .cyber-grid {
     position: fixed;
     top: 0; left: 0; width: 100vw; height: 100vh;
-    background-image: 
-        linear-gradient(rgba(157, 78, 221, 0.04) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(157, 78, 221, 0.04) 1px, transparent 1px);
     background-size: 50px 50px;
     z-index: -1;
     transform: perspective(1000px) rotateX(60deg) translateY(-100px) translateZ(-200px);
@@ -186,21 +183,36 @@ main a{
 }
 
 .hero-video {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    opacity: 0.7;
-    object-fit: cover;
-    z-index: 1;
+    position:absolute;
+    top:0;
+    left:0;
+
+    width:100%;
+    height:100%;
+
+    object-fit:cover;
+
+    opacity:1;
+
+    z-index:0;
 }
 
 .hero-overlay {
-    position: absolute;
-    inset: 0;
-    background: rgba(0,0,0,0.55);
-    z-index: 2;
+    position:absolute;
+    inset:0;
+
+    background:
+    linear-gradient(
+        to bottom,
+        rgba(0,0,0,.55),
+        rgba(0,0,0,.75)
+    );
+
+    z-index:2;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
 }
 
 .hero-content {
@@ -365,7 +377,7 @@ footer {
   border-top:1px solid var(--bdr);border-bottom:1px solid var(--bdr);
   padding:88px 40px;text-align:center;
   position:relative;overflow:hidden;
-  margin-top: 150px;
+  margin-top: 40px;
 }
 
 .cdown-sup{
@@ -671,16 +683,16 @@ hr{
         overflow-x: hidden;
     }
 
+    .hero-video{
+    display:none;
+}
+
     * {
         box-sizing: border-box;
     }
 
     /* ================= HERO ================= */
-    .hero {
-        min-height: 70vh;
-        height: auto;
-        margin-bottom: 40px;
-    }
+   
 
     .hero-overlay {
         padding: 15px;
