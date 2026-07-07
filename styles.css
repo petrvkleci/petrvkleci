@@ -938,3 +938,29 @@ hr{
         padding: 20px;
     }
 }
+.live {
+    color: #ff5050;
+    text-shadow:
+        0 0 5px #ff0000,
+        0 0 10px #ff8b8b,
+        0 0 20px #ff0000,
+        0 0 40px #ff8b8b;
+    animation: pulselive 1.5s infinite ease-in-out;
+}
+
+@keyframes pulselive {
+    0%, 100% {
+        text-shadow:
+            0 0 5px #ff8b8b,
+            0 0 10px #ff0000,
+            0 0 20px #ff8b8b,
+            0 0 40px #ff0000;
+    }
+    50% {
+        text-shadow:
+            0 0 10px #ff0000,
+            0 0 20px #ff8b8b,
+            0 0 40px #ff0000,
+            0 0 80px #ff8b8b
+    }
+}
