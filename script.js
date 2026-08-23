@@ -27,7 +27,7 @@
         };
 
 (function(){
-  const target=new Date('2026-09-11T20:00:00');
+  const target=new Date('2026-09-20T20:00:00');
   const ids=['cdDays','cdHours','cdMins','cdSecs'];
   let prev=[];
   function tick(){
