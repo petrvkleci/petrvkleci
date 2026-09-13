@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Tasemnice | PVK</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../styles.css">
+<link rel="icon" href="../../img/logo-transparent.png">
+</head>
+<body>
+
+<div class="bg-pattern" aria-hidden="true"></div>
+
+<nav>
+    <div class="logo-container">
+        <a href="../../#" class="logo-img" onerror="this.style.display='none'; document.getElementById('logo-text').style.display='block';">
+            <img src="../../img/logo-transparent.png" alt="Petr v kleci Logo" class="logo-img" onerror="this.style.display='none'; document.getElementById('logo-text').style.display='block';">
+        </a>
+        <span id="logo-text">PETR V KLECI</span>
+    </div>
+
+    <div class="nav-links" id="navLinks">
+        <a href="#stats">Statistiky</a>
+        <a href="#fights">Zápasy</a>
+    </div>
+
+    <button class="nav-toggle" id="navToggle" aria-label="Otevřít menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+    </button>
+</nav>
+
+<section class="hero" id="hero">
+    <div class="wrap hero-anim">
+        <div>
+            <div class="hero-tag">World Biggest Gangster, Zápasník Petr v Kleci</div>
+            <h1>
+                <span class="nick" id="heroNick">„Tasemnice“</span>
+                <span id="heroName">Vladyslav Nekompromisný Žokej</span>
+            </h1>
+            <p class="hero-sub" id="heroSub">
+                Král Petr v Kleci 3 a držitel pásu World Biggest Gangster.
+            </p>
+            <div class="hero-record" id="heroRecord"></div>
+            <div class="hero-actions">
+                <a href="#stats" class="btn btn-primary">Zobrazit statistiky</a>
+                <a href="mailto:tasemnice@petrvkleci.fun" class="btn btn-ghost">Kontaktovat</a>
+            </div>
+        </div>
+        <div class="hero-photo-wrap">
+            <div class="hero-photo-glow" aria-hidden="true"></div>
+            <div class="hero-photo" id="heroPhoto">
+                <div class="hero-photo-placeholder" id="heroPhotoPlaceholder">
+                    <img src="../../img/tasemnice.png">
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="stats">
+    <div class="wrap">
+        <div class="section-head reveal">
+            <h2>Bilance v kleci</h2>
+            <p>Kompletní přehled výher, proher a způsobů, jakými byly zápasy rozhodnuty.</p>
+        </div>
+        <div class="stats-grid">
+            <div class="donut-block reveal">
+                <div class="donut-wrap">
+                    <svg viewBox="0 0 200 200">
+                        <circle cx="100" cy="100" r="80" stroke="var(--surface-hover)"></circle>
+                        <g id="donutSegments"></g>
+                    </svg>
+                    <div class="donut-center">
+                        <div class="rate" id="winRateNum">0 %</div>
+                        <div class="rate-lbl">Úspěšnost</div>
+                    </div>
+                </div>
+                <div class="legend" id="donutLegend"></div>
+            </div>
+            <div class="methods-panel panel reveal">
+                <h3>Způsoby vítězství</h3>
+                <div id="methodRows"></div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="fights">
+    <div class="wrap">
+        <div class="section-head reveal">
+            <h2>Poslední zápasy</h2>
+            <p>Přehled posledních zápasů Tasemnice</p>
+        </div>
+        <div class="fight-list reveal" id="fightList"></div>
+    </div>
+</section>
+
+<section id="about">
+    <div class="wrap about-grid">
+        <div class="about-text reveal">
+            <div class="section-head" style="margin-bottom:1.4rem;">
+                <h2>Informace</h2>
+            </div>
+            <p id="aboutP1">
+                Vladyslav "Nekompromisný žokej" Tasemnice má za sebou už 2 zápasy. Vrcholem jeho kariéry byla výhra nad Davidem Houserem v Petr v Kleci 3: THE GANGSTER, čímž získal pás World Biggest Gangster.
+            </p>
+            <p class="about-quote" id="aboutQuote">„Привіт.“</p>
+            <p id="aboutP2">
+                Tasemnice je první a zatím jediný zápasník Petr v Kleci, který má ukrajinské kořeny. 
+            </p>
+        </div>
+        <div class="facts panel reveal" id="factsPanel"></div>
+    </div>
+</section>
+
+<footer class="footer" id="contact">
+    <div class="footer-container">
+
+        <div class="footer-contact">
+            <a href="../../files/prohlaseni_petr_v_kleci.pdf" target="_blank">Disclaimer</a> |
+            <a href="mailto:petrvkleci@petrvkleci.fun">E-Mail</a> |
+            <a href="https://instagram.petrvkleci.fun" target="_blank">Instagram</a> |
+            <a href="https://youtube.petrvkleci.fun" target="_blank">YouTube</a>
+        </div>
+
+        <div class="footer-bottom">
+            <p>© 2026 PETR V KLECI • All rights reserved</p>
+        </div>
+
+    </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
