@@ -7,7 +7,7 @@ const fighterData = {
     weightKg: "67 kg",
     height: "182 cm",
     team: "Petr v Kleci TEAM",
-    age: "16",
+    age: "17",
 
     record: { wins: 1, losses: 1, draws: 0 },
     methods: { ko: 0, sub: 0, dec: 2, xx: 0 }, // KO/TKO, submise, na body — mělo by dát dohromady počet výher
