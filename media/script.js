@@ -29,7 +29,7 @@ const mediaData = {
             tag: "Zápas",
             title: "Nový zápas je TADY!",
             content: [
-                "Už 1. září 2027 proběhne zápas mezi Marek Housenkou a Antonínem Závorem.",
+                "Už 1. září 2027 proběhne zápas mezi Markem Housenkou a Antonínem Závorem.",
                 "Zápas podle pravidel MMA do 77kg proběhne budete moci sledovat na našem YouTube Petr v Kleci.",
                 "Bude se jednat o už třetí zápas pro zatím neporaženého Marka Housenku. Pro Antonína Zázvora to bude premiéra v kleci."
             ]
