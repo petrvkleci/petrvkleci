@@ -117,7 +117,7 @@ document.addEventListener('DOMContentLoaded', () => {
         document.getElementById('detailDate').textContent = formatDate(article.date);
         document.getElementById('detailTitle').textContent = article.title;
         document.getElementById('detailBody').innerHTML = article.content.map(p => `<p>${p}</p>`).join('');
-        document.title = `${article.title} — Petr v kleci Media`;
+        document.title = `${article.title} — PVK`;
         hubView.style.display = 'none';
         articleView.style.display = 'block';
         window.scrollTo({ top: 0, behavior: 'auto' });
