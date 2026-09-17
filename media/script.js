@@ -34,6 +34,325 @@ const mediaData = {
                 "Bude se jednat o už třetí zápas pro zatím neporaženého Marka Housenku. Pro Antonína Zázvora to bude premiéra v kleci."
             ]
         },
+        {
+            slug: "rene-vs-pesta-vyzva",
+            date: "2026-08-30",
+            tag: "Aktualita",
+            title: "René vyzval Peštu!",
+            content: [
+                "René vyzval Peštu na zápas do Petr v Kleci.",
+                "Pešta při staredownu ukázal kdo je tady boss, ale René se nenechal zastrašit a výzvu přijal.",
+                "Celé video staredownu naleznete na našem Instagramu @petrvkleci (https://instagram.petrvkleci.fun)."
+            ]
+        },
+        {
+            slug: "zanin-vs-pata-cach",
+            date: "2026-08-20",
+            tag: "Aktualita",
+            title: "Nikolas Zanin vyzval Patrika Cacha!",
+            content: [
+                "Nikolas Zanin vyzval Patrika Cacha na zápas do Petr v Kleci.",
+                "Jako u každé výzvy jsme mohli vidět staredown, který byl opravdu peprný.",
+                "Celé video výzvy naleznete na našem Instagramu @petrvkleci (https://instagram.petrvkleci.fun)."
+            ]
+        },
+        {
+            slug: "david-houser-opet-vyzvan",
+            date: "2026-07-28",
+            tag: "Aktualita",
+            title: "Davida Housera vyzval Adam Demeter!",
+            content: [
+                "David Houser byl už potřetí vyzván na zápas do Petr v Kleci.",
+                "Adam Demeter vyzval Davida Housera na zápas podle pravidel K1.",
+                "My se tak snažíme dohodnout tento zápas a doufáme, že se nám to podaří.",
+            ]
+        },
+        {
+            slug: "marek-cech-vyzval-petera-suhajdu",
+            date: "2026-07-19",
+            tag: "Aktualita",
+            title: "Mark Čech vyzval Petra Šuhajdu",
+            content: [
+                "Mark Čech vyzval Petra Šuhajdu na zápas do Petr v Kleci.",
+                "Peter Šuhajda se rozhodl přijmout výzvu a zápas se snažíme dohodnout.",
+                "Pro všechny aktuality sledujte naše sociální sítě, hlavně Instagram @petrvkleci (https://instagram.petrvkleci.fun)."
+            ]
+        },
+        {
+            slug: "david-houser-byl-opet-vyzvan-na-zapas",
+            date: "2026-07-12",
+            tag: "Aktualita",
+            title: "David Houser byl opětovně vyzván na zápas",
+            content: [
+                "Junior Doudel vyzval Davida Housera na zápas do Petr v Kleci.",
+                "Doufáme, že se nám tento zápas podaří dohodnout a že se fanoušci dočkají dalšího zápasu.",
+                "Pro všechny aktuality sledujte naše sociální sítě, hlavně Instagram @petrvkleci (https://instagram.petrvkleci.fun)."
+            ]
+        },
+        {
+            slug: "david-houser-byl-vyzvan-na-zapas",
+            date: "2026-06-29",
+            tag: "Aktualita",
+            title: "David Houser byl vyzván na zápas",
+            content: [
+                "Pešta vyzval Davida Housera na zápas do Petr v Kleci.",
+                "David Houser neváhal ani chvíli a výzvu přijal.",
+                "Pro všechny fanoušky je tohle atraktivní zápas. Dokážeme tento zápas dohodnout?"
+            ]
+        },
+        {
+            slug: "zazvor-podpisuje-smlouvu",
+            date: "2026-05-22",
+            tag: "Tisková zpráva",
+            title: "Antonín Závor podpisuje smlouvu s Petr v Kleci",
+            content: [
+                "Antonín Závor oznámil podpis smlouvy s organizací Petr v Kleci.",
+                "Smlouva je platná na dva roky a zahrnuje možnosti zápasů.",
+                "Fanoušci jsou nadšeni a očekávají, že Antonín Závor bude vystupovat v zápasech."
+            ]
+        },
+        {
+            slug: "marek-housenka-byl-vyhozen",
+            date: "2026-05-05",
+            tag: "Tisková zpráva",
+            title: "Mark Housenka byl vyhozen z Petr v Kleci",
+            content: [
+                "Tak tohle asi nikdo nečekal.",
+                "Marek Housenka byl vyhozen z organizace Petr v Kleci. Důvodem je jeho chování na veřejnosti. Údajně nedělá Petr v Kleci dobrou vizitku.",
+                "Něco na tom však nehraje, Marek Housenka vlastní Petr v Kleci. Byl tohle vtip nebo to myslel David Houser vážně?"
+            ]
+        },
+        {
+            slug: "david-houser-ukoncil-karieru",
+            date: "2026-05-05",
+            tag: "Tisková zpráva",
+            title: "David Houser ukončil kariéru",
+            content: [
+                "David Houser oznámil ukončení své kariéry v Petr v Kleci.",
+                "Po zápase Dejvího a Tasemnice oznámil David Houser, že se v Petr v Kleci už neukáže.",
+                "Fanoušci jsou v šoku, ale David Houser uvedl, že se chce věnovat rodině a že se možná jednoho dne vrátí."
+            ]
+        },
+        {
+            slug: "petr-v-kleci-5",
+            date: "2026-05-05",
+            tag: "Zápas",
+            title: "Dejví je vítězem PVK5: The End!",
+            content: [
+                "Po napínávém zápase se Dejví stává vítězem zápasu proti Tasemnici a mění svoji bilanci na 1-0.",
+                "Dejví celý zápas dominoval a nakonec se mu podařilo porazit Tasemnici na body.",
+                "Po zápase Dejví poděkoval všem fanouškům a oficiálně vyzval do zápasu Antonína Zázvora."
+            ]
+        },
+        {
+            slug: "petr-v-kleci-5-uz-za-30-minut",
+            date: "2026-05-05",
+            tag: "Tisková zpráva",
+            title: "Fanoušci, je to tady!",
+            content: [
+                "Už za 30 minut proběhne zápas Dejví vs. Tasemnice, který můžete sledovat živě na našem YouTube Petr v Kleci.",
+                "Samotný zápas můžete sledovat na našem YouTube kanálu Petr v Kleci (https://youtube.petrvkleci.fun).",
+                "Jak zápasnící tak moderátoři jsou připraveni a těší se na vás!"
+            ]
+        },
+        {
+            slug: "petr-v-kleci-5-uz-zitra",
+            date: "2026-05-04",
+            tag: "Tisková zpráva",
+            title: "Petr v Kleci 5 je tady!",
+            content: [
+                "Nejočekávanější zápas roku 2026 je tady — Dejví vs. Tasemnice.",
+                "Už zítra se můžete těšit na zápas, který proběhne živě na našem YouTube Petr v Kleci.",
+                "Dokáže Dejví porazit Tasemnici a získat tak svoji první výhru v organizaci Petr v Kleci?"
+            ]
+        },
+        {
+            slug: "2-tydny-do-petr-v-kleci-5",
+            date: "2026-04-20",
+            tag: "Tisková zpráva",
+            title: "Je to tady — už jen 2 týdny do PVK5!",
+            content: [
+                "Už za 14 dnů nás čeká zápas Dejvího a Tasemnice.",
+                "Petr v Kleci 5: The End je podle mediů nejočekávanější zápas roku 2026.",
+                "Celý zápas můžete sledovat živě na našem YouTube Petr v Kleci (https://youtube.petrvkleci.fun)."
+            ]
+        },
+        {
+            slug: "uz-i-tasemnice-trenuje",
+            date: "2026-04-15",
+            tag: "Aktualita",
+            title: "Tasemnice už trénuje na Petr v Kleci 5",
+            content: [
+                "Jak Dejví, tak Tasemnice už trénují na jejich zápas, který proběhne 5. května 2026.",
+                "Na základě jejich tréninků se dá očekávat, že zápas bude velmi vyrovnaný a napínavý.",
+                "Celé video naleznete na našem Instagramu @petrvkleci (https://instagram.petrvkleci.fun).",
+            ]
+        },
+        {
+            slug: "dejvi-uz-trenuje-na-petr-v-kleci-5",
+            date: "2026-04-01",
+            tag: "Aktualita",
+            title: "Dejví už trénuje na Tasemnici",
+            content: [
+                "Dejví nabírá formu a posiluje na jeho zápas s Tasemnicí.",
+                "Video naleznete na našem Instagramu @petrvkleci (https://instagram.petrvkleci.fun).",
+                "Pro všechny aktuality sledujte naše sociální sítě."
+            ]
+        },
+        {
+            slug: "david-houser-nepolevuje",
+            date: "2026-03-08",
+            tag: "Aktualita",
+            title: "David Houser neustále trénuje a připravuje se na další zápasy",
+            content: [
+                "David Houser byl spatřen na tréninku rokou na virtuální realitě.",
+                "Video naleznete na našem Instagramu @petrvkleci (https://instagram.petrvkleci.fun).",
+                "Pro všechny aktuality sledujte naše sociální sítě."
+            ]
+        },
+        {
+            slug: "statistiky-pred-petr-v-kleci-5",
+            date: "2026-02-11",
+            tag: "Tisková zpráva",
+            title: "Aktuální statistiky před PVK5",
+            content: [
+                "Housenka má na kontě 2 výhry, zatímco Houser ani jednu.",
+                "Housenka s bilancí 2-0 je aktuální jedničkou žebříčku P4P (pound for pound) Petr v Kleci.",
+                "Pod ním je Tasemnice s bilancí 1-0, který už 5. května bude zápasit s Dejvím a změní svoji bilanci. Houser: 0-3, Dejví 0-1."
+            ]
+        },
+        {
+            slug: "petr-v-kleci-5-zapas",
+            date: "2026-01-15",
+            tag: "Tisková zpráva",
+            title: "Dejví vs. Tasemnice",
+            content: [
+                "Petr v Kleci 5 je tady a s ním tento peprný zápas.",
+                "Vladyslav Tasemnice se utká s Dejvím, který bude v kleci úplným nováčkem.",
+                "Zápas proběhne 5. května 2026 a budete ho moci sledovat živě na našem YouTube Petr v Kleci."
+            ]
+        },
+        {
+            slug: "petr-v-kleci-5-zapas",
+            date: "2026-01-15",
+            tag: "Tisková zpráva",
+            title: "Dejví vs. Tasemnice",
+            content: [
+                "Petr v Kleci 5 je tady a s ním tento peprný zápas.",
+                "Vladyslav Tasemnice se utká s Dejvím, který bude v kleci úplným nováčkem.",
+                "Zápas proběhne 5. května 2026 a budete ho moci sledovat živě na našem YouTube Petr v Kleci."
+            ]
+        },
+        {
+            slug: "petr-v-kleci-4-se-rusi",
+            date: "2026-01-10",
+            tag: "Tisková zpráva",
+            title: "Petr v Kleci 4: Last Chance zrušen!",
+            content: [
+                "Organizace Petr v Kleci oznamuje, že Petr v Kleci 4: Last Chance je zrušen.",
+                "David Houser (CEO, Co-founder) uvedl, že se organizace nechce spojovat s číslem 4.",
+                "Zároveň dodal, že už 5.5. 2026 se můžeme těšit na poslední galavečer Petr v Kleci a tím bude Petr v Kleci 5: The End."
+            ]
+        },
+        {
+            slug: "petr-v-kleci-4-uz-brzy",
+            date: "2025-12-14",
+            tag: "Tisková zpráva",
+            title: "Petr v Kleci 4: Last Chance už 11. ledna 2026!",
+            content: [
+                "Už 11. ledna 2026 proběhne čtvrtý galavečer organizace Petr v Kleci.",
+                "David Houser po prohraném zápase v Petr v Kleci 3: The Gangster vyzval Marka Housenku na zápas.",
+                "Marek Housenka výzvu přijal. Triologie zápasů mezi Davidem Houserem a Markem Housenkou tak bude kompletní."
+            ]
+        },
+        {
+            slug: "petr-v-kleci-3",
+            date: "2025-12-14",
+            tag: "Zápas",
+            title: "Vladyslav Tasemnice bere výhru!",
+            content: [
+                "Vladyslav Tasemnice vítězí po bodovém rozhodnutí a stává se vítězem zápasu a držitelem pásu WBG.",
+                "David Houser nevyhrává ani v tomhle zápase a mění svoji bilanci na 0-3. Navíc nedokázal získat pás World Biggest Gangster.",
+                "Po zápase David Houser požádal Vladyslava Tasemnici o ruku a ten souhlasil. Gratulujeme!"
+            ]
+        },
+        {
+            slug: "petr-v-kleci-3-uz-zitra",
+            date: "2025-12-13",
+            tag: "Tisková zpráva",
+            title: "Už zítra!",
+            content: [
+                "Už zítra 14. prosince 2025 proběhne třetí zápas organizace Petr v Kleci.",
+                "Můžete se těšit na zápas mezi Davidem Houserem a Vladyslavem Tasemnicí, který proběhne živě na našem YouTube Petr v Kleci.",
+                "Začátek streamu je naplánován na 21:00, ale doporučujeme se připojit už o pár minut dříve, abyste si stihli nastavit zvuk a obraz."
+            ]
+        },
+        {
+            slug: "petr-v-kleci-3-je-tady",
+            date: "2025-11-30",
+            tag: "Tisková zpráva",
+            title: "Petr v Kleci 3 je tady!",
+            content: [
+                "Je to tady, Petr v Kleci 3. Houser vs. Tasemnice",
+                "David Houser se tentokrát utká s Vladyslavem Tasemnicí, který v kleci nemá žádné zkušenosti. Podaří se Davidovi zlomit prokletí a zvítězit?",
+                'Tento zápas můžete sledovat živě na našem YouTube Petr v Kleci už 14. prosince 2025.'
+            ]
+        },
+        {
+            slug: "petr-v-kleci-2",
+            date: "2025-10-28",
+            tag: "Zápas",
+            title: "Housenka se stává vítězem Petr v Kleci 2!",
+            content: [
+                "David Houser hned na začátek zápasu odklepal a vzdává tak výhru Markovi Housenkovi, který se tak stává vítězem druhého zápasu organizace Petr v Kleci.",
+                "Marek Housenka tímto zápasem mění svoji bilanci na 2-0 a David Houser na 0-2.",
+                'Už brzy se můžete těšit na další zápas, který proběhne již v prosinci...'
+            ]
+        },
+        {
+            slug: "petr-v-kleci-2-je-tady",
+            date: "2025-10-28",
+            tag: "Tisková zpráva",
+            title: "Petr v Kleci 2 je tady!",
+            content: [
+                "Je to tady, Petr v Kleci 2. Sledujte živě na našem YouTube Petr v Kleci.",
+                "Už za malou chvíli odvysíláme druhý zápas, který proběhne mezi Markem Housenkou a Davidem Houserem, kteří se utkali už v prvním zápase organizace Petr v Kleci před více jak jedním rokem.",
+                'Začátek streamu je naplánován na 22:00, ale doporučujeme se připojit už o pár minut dříve, abyste si stihli nastavit zvuk a obraz.'
+            ]
+        },
+        {
+            slug: "petr-v-kleci-se-vraci",
+            date: "2025-10-27",
+            tag: "Tisková zpráva",
+            title: "Petr v Kleci se vrací!",
+            content: [
+                "Po více jak jednom roce se na scénu vrací organizace Petr v Kleci.",
+                "Už zítra 28. října 2025 proběhne druhý zápas, který bude možné sledovat živě na našem YouTube kanálu.",
+                'Zápas bude odveta mezi Markem Housenkou a Davidem Houserem, kteří se utkali už v prvním zápase organizace Petr v Kleci.'
+            ]
+        },
+        {
+            slug: "petr-v-kleci-1",
+            date: "2024-09-24",
+            tag: "Zápas",
+            title: "Housenka vítězí!",
+            content: [
+                "Po dlouhém a napínavém zápase se Marku Housenkovi podařilo porazit Davida Housera.",
+                "Zápas ukončil Marek hned 2krát, ale David se poprvé dokázal dostat zpět na nohy a pokračovat v zápase.",
+                'Marek Housenka nakonec dokázal Davida Housera ukončit na KO v 2. kole a je tak prvním vítězem organizace Petr v Kleci. Gratulujeme!'
+            ]
+        },
+        {
+            slug: "petr-v-kleci-1-potvrzen",
+            date: "2024-09-24",
+            tag: "Tisková zpráva",
+            title: "Petr v Kleci 1 — první zápas je potvrzen!",
+            content: [
+                "Už dnes 24. září 2024 proběhne první zápas Petr v Kleci.",
+                "Tento zápas proběhne mezi Markem Housenkou a Davidem Houserem.",
+                'Zápas tak probíhá mezi dvěma CEO of Petr v Kleci. Dá se tak říct, že tohle je "zápas o organizaci Petr v Kleci."'
+            ]
+        },
         //{
         //    slug: "novy-kondicni-kouc",
         //    date: "2026-08-20",
