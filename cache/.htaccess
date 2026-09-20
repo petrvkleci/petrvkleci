@@ -1,0 +1,2 @@
+# Zablokuje přímý přístup k cachovaným datům přes URL (funguje na Apache).
+Require all denied
