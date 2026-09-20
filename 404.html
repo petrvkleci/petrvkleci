@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex, follow">
+<title>404 — Stránka nenalezena | Petr v kleci</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+
+/* ============================================
+   1) PROMĚNNÉ / ZÁKLAD — stejné jako na ostatních stránkách
+   ============================================ */
+:root {
+    --bg-color: #1a1622;
+    --surface-color: #272236;
+    --surface-hover: #322b46;
+    --text-main: #f4f1f8;
+    --text-muted: #a39bb3;
+    --accent: #9d4edd;
+    --accent-glow: rgba(157, 78, 221, 0.6);
+    --glass-border: rgba(157, 78, 221, 0.3);
+    --nav-height: 70px;
+
+    --accent-soft: #c299f0;
+    --radius-lg: 20px;
+    --radius-sm: 10px;
+    --container: 1120px;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+
+body {
+    background: var(--bg-color);
+    color: var(--text-main);
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+img { max-width: 100%; display: block; }
+a { color: inherit; text-decoration: none; }
+
+.wrap { max-width: var(--container); margin: 0 auto; padding: 0 24px; }
+
+h1, .display {
+    font-family: 'Bebas Neue', 'Arial Narrow', sans-serif;
+    font-weight: 400;
+    letter-spacing: 0.02em;
+    line-height: 0.95;
+}
+
+::selection { background: var(--accent); color: #fff; }
+:focus-visible { outline: 2px solid var(--accent-soft); outline-offset: 3px; }
+
+.bg-pattern {
+    position: fixed; inset: 0; z-index: 0; pointer-events: none; opacity: 0.5;
+    background-image:
+        linear-gradient(var(--glass-border) 1px, transparent 1px),
+        linear-gradient(90deg, var(--glass-border) 1px, transparent 1px);
+    background-size: 64px 64px;
+    -webkit-mask-image: radial-gradient(ellipse 70% 60% at 50% 45%, #000 10%, transparent 70%);
+            mask-image: radial-gradient(ellipse 70% 60% at 50% 45%, #000 10%, transparent 70%);
+}
+
+.btn {
+    padding: 13px 26px;
+    font-weight: 600;
+    font-size: 0.94rem;
+    border-radius: var(--radius-sm);
+    transition: box-shadow 0.25s ease, transform 0.15s ease, background 0.2s ease;
+    display: inline-block;
+}
+.btn-primary { background: var(--accent); color: #fff; }
+.btn-primary:hover { box-shadow: 0 0 26px var(--accent-glow); transform: translateY(-2px); }
+.btn-ghost { background: transparent; border: 1px solid var(--glass-border); color: var(--text-main); }
+.btn-ghost:hover { background: var(--surface-hover); border-color: var(--accent); }
+
+/* ============================================
+   2) NAVIGACE — sdílené napříč weby, neměnit
+   ============================================ */
+nav {
+    position: fixed;
+    top: 0; width: 100%; height: var(--nav-height);
+    padding: 0 40px;
+    display: flex; justify-content: space-between; align-items: center;
+    background: rgba(26, 22, 34, 0.9);
+    z-index: 1000;
+    border-bottom: 1px solid var(--glass-border);
+}
+
+.logo-container { height: 40px; }
+.logo-img { height: 100%; width: auto; object-fit: contain; }
+
+.nav-links { display: flex; gap: 30px; }
+.nav-links a {
+    color: var(--text-main); text-decoration: none; font-weight: 800;
+    font-size: 0.85rem; letter-spacing: 2px; text-transform: uppercase;
+    position: relative; padding: 5px 0; transition: color 0.3s;
+}
+.nav-links a:hover { color: var(--accent); text-shadow: 0 0 10px var(--accent-glow); }
+
+#logo-text { display: none; font-family: 'Bebas Neue', sans-serif; font-size: 1.4rem; letter-spacing: 0.06em; color: var(--text-main); }
+
+.nav-toggle { display: none; flex-direction: column; gap: 5px; background: none; border: none; cursor: pointer; padding: 8px; }
+.nav-toggle span { width: 24px; height: 2px; background: var(--text-main); display: block; }
+
+@media (max-width: 700px) {
+    .nav-links { display: none; }
+    .nav-links.open {
+        display: flex; position: fixed; top: var(--nav-height); left: 0; right: 0; bottom: 0;
+        background: var(--bg-color); flex-direction: column; align-items: flex-start;
+        padding: 2.5rem 24px; gap: 1.6rem; z-index: 999;
+    }
+    .nav-links.open a { font-size: 1.3rem; }
+    .nav-toggle { display: flex; }
+}
+
+/* ============================================
+   3) 404 OBSAH
+   ============================================ */
+main { position: relative; z-index: 1; }
+
+.notfound {
+    min-height: calc(100vh - var(--nav-height));
+    padding-top: var(--nav-height);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+.notfound-inner { max-width: 560px; padding: 3rem 0; }
+
+.notfound-tag {
+    display: inline-flex; align-items: center; gap: 8px;
+    color: var(--accent-soft); font-size: 0.9rem; font-weight: 500; margin-bottom: 1.2rem;
+}
+.notfound-tag::before {
+    content: ''; width: 8px; height: 8px; border-radius: 50%;
+    background: var(--accent); box-shadow: 0 0 10px var(--accent-glow); display: inline-block;
+}
+
+.notfound-code {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: clamp(6rem, 20vw, 10rem);
+    line-height: 0.85;
+    color: var(--accent);
+    text-shadow: 0 0 70px var(--accent-glow);
+}
+
+.notfound h1 {
+    font-size: clamp(1.7rem, 4vw, 2.4rem);
+    text-transform: uppercase;
+    margin-top: 0.8rem;
+}
+
+.notfound .lead {
+    color: var(--text-muted);
+    margin-top: 1rem;
+    font-size: 1.02rem;
+}
+
+.notfound-actions {
+    display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;
+    margin-top: 2.4rem;
+}
+
+/* ============================================
+   4) PATIČKA — sdílená napříč weby, neměnit
+   ============================================ */
+footer {
+    position: relative;
+    z-index: 1;
+    text-align: center;
+    padding: 50px;
+    background: #0f0d14;
+    border-top: 1px solid var(--glass-border);
+    color: #4b4263;
+    font-size: 0.9rem;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    font-weight: 800;
+}
+
+.footer-container { display: flex; flex-direction: column; }
+.footer-contact { margin: 10px 0 30px 0; }
+.footer-contact a { text-decoration: none; transition: .3s; color: var(--text-muted); }
+.footer-contact a:hover { text-shadow: 0 0 10px var(--accent-glow); color: var(--accent); }
+
+</style>
+</head>
+<body>
+
+<div class="bg-pattern" aria-hidden="true"></div>
+
+<!-- ============ NAVIGACE ============ -->
+<!-- Pozn.: cesty tady jsou od kořene webu (/), ne "../../" jako jinde —
+     na 404 stránku se dá dostat z libovolné hloubky URL. -->
+<nav>
+    <div class="logo-container">
+        <a href="/" class="logo-img" onerror="this.style.display='none'; document.getElementById('logo-text').style.display='block';">
+            <img src="/img/logo-transparent.png" alt="Petr v kleci Logo" class="logo-img" onerror="this.style.display='none'; document.getElementById('logo-text').style.display='block';">
+        </a>
+        <span id="logo-text">PETR V KLECI</span>
+    </div>
+
+    <div class="nav-links" id="navLinks">
+        <a href="/">Domů</a>
+        <a href="https://petrvkleci.fun/live/" target="_blank">Živě</a>
+    </div>
+
+    <button class="nav-toggle" id="navToggle" aria-label="Otevřít menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+    </button>
+</nav>
+
+<main>
+    <section class="notfound">
+        <div class="wrap notfound-inner">
+            <div class="notfound-tag">Chyba 404</div>
+            <div class="notfound-code">404</div>
+            <h1>Tahle stránka utekla z klece</h1>
+            <p class="lead">
+                Stránka, kterou hledáte, tu buď nikdy nebyla, nebo se mezitím přesunula jinam.
+                Zkontrolujte adresu, nebo pokračujte odsud dál.
+            </p>
+            <div class="notfound-actions">
+                <a href="/" class="btn btn-primary">← Zpět domů</a>
+                <a href="/media/#" class="btn btn-ghost">Media</a>
+            </div>
+        </div>
+    </section>
+</main>
+
+<!-- ============ PATIČKA ============ -->
+<footer class="footer">
+    <div class="footer-container">
+
+        <div class="footer-contact">
+            <a href="/files/prohlaseni_petr_v_kleci.pdf" target="_blank">Disclaimer</a> |
+            <a href="mailto:petrvkleci@petrvkleci.fun">E-Mail</a> |
+            <a href="https://instagram.petrvkleci.fun" target="_blank">Instagram</a> |
+            <a href="https://youtube.petrvkleci.fun" target="_blank">YouTube</a>
+        </div>
+
+        <div class="footer-bottom">
+            <p>© 2026 PETR V KLECI • All rights reserved</p>
+        </div>
+
+    </div>
+</footer>
+
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+    const navToggle = document.getElementById('navToggle');
+    const navLinks = document.getElementById('navLinks');
+    navToggle.addEventListener('click', () => {
+        const isOpen = navLinks.classList.toggle('open');
+        navToggle.setAttribute('aria-expanded', isOpen);
+    });
+    navLinks.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
+        navLinks.classList.remove('open');
+        navToggle.setAttribute('aria-expanded', false);
+    }));
+});
+</script>
+</body>
+</html>
