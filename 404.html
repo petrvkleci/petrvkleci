@@ -10,9 +10,6 @@
 <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <style>
 
-/* ============================================
-   1) PROMĚNNÉ / ZÁKLAD — stejné jako na ostatních stránkách
-   ============================================ */
 :root {
     --bg-color: #1a1622;
     --surface-color: #272236;
@@ -79,9 +76,6 @@ h1, .display {
 .btn-ghost { background: transparent; border: 1px solid var(--glass-border); color: var(--text-main); }
 .btn-ghost:hover { background: var(--surface-hover); border-color: var(--accent); }
 
-/* ============================================
-   2) NAVIGACE — sdílené napříč weby, neměnit
-   ============================================ */
 nav {
     position: fixed;
     top: 0; width: 100%; height: var(--nav-height);
@@ -119,9 +113,6 @@ nav {
     .nav-toggle { display: flex; }
 }
 
-/* ============================================
-   3) 404 OBSAH
-   ============================================ */
 main { position: relative; z-index: 1; }
 
 .notfound {
@@ -168,9 +159,6 @@ main { position: relative; z-index: 1; }
     margin-top: 2.4rem;
 }
 
-/* ============================================
-   4) PATIČKA — sdílená napříč weby, neměnit
-   ============================================ */
 footer {
     position: relative;
     z-index: 1;
@@ -196,9 +184,6 @@ footer {
 
 <div class="bg-pattern" aria-hidden="true"></div>
 
-<!-- ============ NAVIGACE ============ -->
-<!-- Pozn.: cesty tady jsou od kořene webu (/), ne "../../" jako jinde —
-     na 404 stránku se dá dostat z libovolné hloubky URL. -->
 <nav>
     <div class="logo-container">
         <a href="/" class="logo-img" onerror="this.style.display='none'; document.getElementById('logo-text').style.display='block';">
@@ -235,7 +220,6 @@ footer {
     </section>
 </main>
 
-<!-- ============ PATIČKA ============ -->
 <footer class="footer">
     <div class="footer-container">
 
