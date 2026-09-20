@@ -1,7 +1,7 @@
 const fighterData = {
     name: "Dejví Čedar",
     nickname: "Dejví",
-    photoUrl: "", // sem vložte cestu/URL k fotce, např. "petr.jpg" — necháte-li prázdné, zobrazí se zástupný obrázek
+    photoUrl: "",
 
     weightClass: "-",
     weightKg: "67 kg",
@@ -10,18 +10,14 @@ const fighterData = {
     age: "16",
 
     record: { wins: 1, losses: 0, draws: 0 },
-    methods: { ko: 0, sub: 0, dec: 1, xx: 0 }, // KO/TKO, submise, na body — mělo by dát dohromady počet výher
+    methods: { ko: 0, sub: 0, dec: 1, xx: 0 },
 
     recentFights: [
         { result: "win",    opponent: "Vladyslav Tasemnice",   method: "Na body",         round: "2. kolo", event: "Petr v Kleci 5", date: "5. 5. 2026" },
     ]
 };
 
-/* ============================================================
-   VYKRESLENÍ — není potřeba upravovat
-   ============================================================ */
 document.addEventListener('DOMContentLoaded', () => {
-    // --- Hero texty ---
     document.getElementById('heroName').textContent = fighterData.name;
     document.getElementById('heroNick').textContent = fighterData.nickname;
 
@@ -36,7 +32,6 @@ document.addEventListener('DOMContentLoaded', () => {
         <div><div class="num">${r.draws}</div><div class="lbl">Remízy</div></div>
     `;
 
-    // --- Fotka ---
     if (fighterData.photoUrl) {
         const img = document.createElement('img');
         img.src = fighterData.photoUrl;
@@ -44,9 +39,6 @@ document.addEventListener('DOMContentLoaded', () => {
         document.getElementById('heroPhotoPlaceholder').replaceWith(img);
     }
 
-    
-
-    // --- Donut graf W/P/R ---
     const segments = [
         { key: 'Výhry',  value: r.wins,   color: 'var(--accent)' },
         { key: 'Prohry', value: r.losses, color: 'var(--accent-warn)' },
@@ -75,7 +67,6 @@ document.addEventListener('DOMContentLoaded', () => {
         <div class="legend-item"><span class="legend-dot" style="background:${s.color}"></span>${s.key}: <b>${s.value}</b></div>
     `).join('');
 
-    // --- Způsoby vítězství ---
     const m = fighterData.methods;
     const maxM = Math.max(m.ko, m.sub, m.dec, m.xx, 1);
     const methodData = [
@@ -91,7 +82,6 @@ document.addEventListener('DOMContentLoaded', () => {
         </div>
     `).join('');
 
-    // --- Poslední zápasy ---
     const resultMap = { win: { badge: 'V', cls: 'win' }, loss: { badge: 'P', cls: 'loss' }, draw: { badge: 'R', cls: 'draw' }, coming: { badge: '?', cls: 'coming' }};
     document.getElementById('fightList').innerHTML = fighterData.recentFights.map(f => {
         const rm = resultMap[f.result];
@@ -105,7 +95,6 @@ document.addEventListener('DOMContentLoaded', () => {
         </div>`;
     }).join('');
 
-    // --- Rychlá fakta (O mně) ---
     document.getElementById('factsPanel').innerHTML = `
         <div class="frow"><span>Váhová kategorie</span><span>${fighterData.weightClass}</span></div>
         <div class="frow"><span>Tým / gym</span><span>${fighterData.team}</span></div>
@@ -114,7 +103,6 @@ document.addEventListener('DOMContentLoaded', () => {
         <div class="frow"><span>Úspěšnost</span><span>${winRate} %</span></div>
     `;
 
-    // --- Animace při scrollu ---
     const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
     const revealEls = document.querySelectorAll('.reveal');
     const barEls = document.querySelectorAll('.m-bar-fill');
@@ -134,7 +122,6 @@ document.addEventListener('DOMContentLoaded', () => {
         }, { threshold: 0.15 });
         revealEls.forEach(el => io.observe(el));
 
-        // rozjede pruhy metod a počítadlo úspěšnosti, jakmile je sekce vidět
         const statsSection = document.getElementById('stats');
         const statsIO = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
@@ -156,7 +143,6 @@ document.addEventListener('DOMContentLoaded', () => {
         statsIO.observe(statsSection);
     }
 
-    // --- Mobilní menu ---
     const navToggle = document.getElementById('navToggle');
     const navLinks = document.getElementById('navLinks');
     navToggle.addEventListener('click', () => {
@@ -168,7 +154,6 @@ document.addEventListener('DOMContentLoaded', () => {
         navToggle.setAttribute('aria-expanded', false);
     }));
 
-    // --- Aktivní odkaz v navigaci dle scrollu ---
     const sections = ['hero', 'stats', 'fights',].map(id => document.getElementById(id));
     const navA = document.querySelectorAll('.nav-links a');
     const navIO = new IntersectionObserver((entries) => {
