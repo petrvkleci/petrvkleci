@@ -392,7 +392,6 @@ document.addEventListener('DOMContentLoaded', () => {
         return text.length > 150 ? text.slice(0, 150).trim() + '…' : text;
     }
 
-    // převede běžný YouTube odkaz (watch?v=, youtu.be/, embed/) na embed URL
     function youtubeEmbedUrl(url) {
         const match = url.match(/(?:youtu\.be\/|youtube\.com\/(?:watch\?v=|embed\/))([a-zA-Z0-9_-]{6,})/);
         return match ? `https://www.youtube.com/embed/${match[1]}` : null;
@@ -485,7 +484,6 @@ document.addEventListener('DOMContentLoaded', () => {
     renderGrid();
     checkHash();
 
-    // --- reveal animace ---
     const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
     const revealEls = document.querySelectorAll('.reveal');
     if (reduceMotion) {
@@ -499,7 +497,6 @@ document.addEventListener('DOMContentLoaded', () => {
         revealEls.forEach(el => io.observe(el));
     }
 
-    // --- mobilní menu ---
     const navToggle = document.getElementById('navToggle');
     const navLinks = document.getElementById('navLinks');
     navToggle.addEventListener('click', () => {
@@ -511,7 +508,6 @@ document.addEventListener('DOMContentLoaded', () => {
         navToggle.setAttribute('aria-expanded', false);
     }));
 
-    // --- JSON-LD strukturovaná data (pro AI a vyhledávače) ---
     const orgLd = {
         "@context": "https://schema.org",
         "@type": "SportsOrganization",

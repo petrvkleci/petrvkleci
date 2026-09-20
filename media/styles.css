@@ -81,9 +81,6 @@ h1, h2, h3, .display {
     .reveal { opacity: 1 !important; transform: none !important; transition: none !important; }
 }
 
-/* ============================================
-   2) NAVIGACE — sdílené napříč weby, neměnit
-   ============================================ */
 nav {
     position: fixed;
     top: 0; width: 100%; height: var(--nav-height);
@@ -105,7 +102,6 @@ nav {
 }
 .nav-links a:hover { color: var(--accent); text-shadow: 0 0 10px var(--accent-glow); }
 
-/* --- doplňkové, jen pro tuto stránku --- */
 .nav-links a.active { color: var(--accent); text-shadow: 0 0 10px var(--accent-glow); }
 #logo-text { display: none; font-family: 'Bebas Neue', sans-serif; font-size: 1.4rem; letter-spacing: 0.06em; color: var(--text-main); }
 
@@ -123,9 +119,6 @@ nav {
     .nav-toggle { display: flex; }
 }
 
-/* ============================================
-   3) HUB — hlavička sekce a filtr
-   ============================================ */
 main { position: relative; z-index: 1; padding-top: var(--nav-height); }
 
 .hub-hero { padding: 5rem 0 3rem; }
@@ -164,9 +157,6 @@ main { position: relative; z-index: 1; padding-top: var(--nav-height); }
 .filter-chip:hover { color: var(--text-main); border-color: var(--accent); }
 .filter-chip.active { background: var(--accent); border-color: var(--accent); color: #fff; }
 
-/* ============================================
-   4) MŘÍŽKA ČLÁNKŮ
-   ============================================ */
 .articles-grid {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
@@ -206,9 +196,6 @@ main { position: relative; z-index: 1; padding-top: var(--nav-height); }
 
 .empty-state { color: var(--text-muted); padding: 3rem 0; text-align: center; }
 
-/* ============================================
-   5) DETAIL ČLÁNKU
-   ============================================ */
 #articleView { display: none; padding-bottom: 6rem; }
 .article-back {
     display: inline-flex; align-items: center; gap: 6px;
@@ -228,14 +215,12 @@ main { position: relative; z-index: 1; padding-top: var(--nav-height); }
 .article-body p { color: var(--text-muted); margin-bottom: 1.2rem; font-size: 1.02rem; }
 .article-body p:first-of-type { color: var(--text-main); font-size: 1.1rem; }
 
-/* --- volitelná galerie fotek uvnitř článku --- */
 #detailGalleryWrap { margin: 2rem 0; max-width: 68ch; }
 .gallery-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(140px, 1fr)); gap: 10px; }
 .gallery-grid a { border-radius: var(--radius-md); overflow: hidden; }
 .gallery-grid img { aspect-ratio: 4/3; object-fit: cover; transition: transform 0.2s ease; }
 .gallery-grid a:hover img { transform: scale(1.05); }
 
-/* --- volitelné video uvnitř článku --- */
 #detailVideoWrap { margin: 2rem 0; max-width: 68ch; }
 .video-embed { position: relative; width: 100%; padding-top: 56.25%; border-radius: var(--radius-lg); overflow: hidden; background: #000; }
 .video-embed iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; }
@@ -246,9 +231,6 @@ main { position: relative; z-index: 1; padding-top: var(--nav-height); }
     .articles-grid { grid-template-columns: 1fr; }
 }
 
-/* ============================================
-   6) PATIČKA — sdílená napříč weby, neměnit
-   ============================================ */
 footer {
     position: relative;
     z-index: 1;
