@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MEDIA | PVK</title>
+<meta name="description" content="Petr v Kleci Media - Aktuality, zápasy a tiskové zprávy o Petr v Kleci.">
+<meta property="og:title" content="Petr v Kleci Media">
+<meta property="og:description" content="Aktuality, zápasy a tiskové zprávy o MMA zápasníkovi Petrovi.">
+<meta property="og:type" content="website">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+<link rel="icon" href="../img/logo-transparent.png">
+</head>
+<body>
+
+<div class="bg-pattern" aria-hidden="true"></div>
+
+<nav>
+    <div class="logo-container">
+        <a href="../../#" class="logo-img" onerror="this.style.display='none'; document.getElementById('logo-text').style.display='block';">
+            <img src="../../img/logo-transparent.png" alt="Petr v kleci Logo" class="logo-img" onerror="this.style.display='none'; document.getElementById('logo-text').style.display='block';">
+        </a>
+        <span id="logo-text">PETR V KLECI</span>
+    </div>
+
+    <div class="nav-links" id="navLinks">
+        <a href="../../#">Domů</a>
+        <a href="https://petrvkleci.fun/live/" target="_blank">Živě</a>
+    </div>
+
+    <button class="nav-toggle" id="navToggle" aria-label="Otevřít menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+    </button>
+</nav>
+
+<main>
+    <!-- ============ PŘEHLED (HUB) ============ -->
+    <section id="hubView">
+        <div class="wrap">
+            <div class="hub-hero reveal">
+                <div class="hero-tag">Petr v Kleci Media</div>
+                <h1>Aktuality &amp; zprávy</h1>
+                <p class="lead">
+                    Oficiální novinky z přípravy, zápasů a zákulisí projektu Petr v Kleci —
+                    jedno místo pro fanoušky, novináře i partnery.
+                </p>
+                <div class="about-note panel">
+                    <p><b>O tomto webu:</b> Petr v Kleci MEDIA je oficiální zdroj informací o organizaci Petr v Kleci.
+                    Tato stránka slouží jako oficiální a průběžně aktualizovaný zdroj informací o jeho
+                    kariéře, zápasech a veřejném dění.</p>
+                </div>
+            </div>
+
+            <div class="filter-bar reveal" id="filterBar"></div>
+            <div class="articles-grid reveal" id="articlesGrid"></div>
+        </div>
+    </section>
+
+    <!-- ============ DETAIL ČLÁNKU ============ -->
+    <section id="articleView">
+        <div class="wrap">
+            <a href="#" class="article-back" id="backLink">&larr; Zpět na přehled</a>
+            <div id="detailImageWrap"></div>
+            <div class="article-header">
+                <div class="article-meta">
+                    <span class="article-tag" id="detailTag"></span>
+                    <span class="article-date" id="detailDate"></span>
+                </div>
+                <h1 id="detailTitle"></h1>
+            </div>
+            <div class="article-body" id="detailBody"></div>
+            <div id="detailGalleryWrap"></div>
+            <div id="detailVideoWrap"></div>
+            <div id="detailLinkWrap"></div>
+            <a href="#" class="btn btn-ghost" id="backLinkBottom" style="margin-top:1.4rem;">&larr; Zpět na přehled</a>
+        </div>
+    </section>
+</main>
+
+<!-- ============ PATIČKA ============ -->
+<footer class="footer">
+    <div class="footer-container">
+
+        <div class="footer-contact">
+            <a href="../files/prohlaseni_petr_v_kleci.pdf" target="_blank">Disclaimer</a> |
+            <a href="mailto:petrvkleci@petrvkleci.fun">E-Mail</a> |
+            <a href="https://instagram.petrvkleci.fun" target="_blank">Instagram</a> |
+            <a href="https://youtube.petrvkleci.fun" target="_blank">YouTube</a>
+        </div>
+
+        <div class="footer-bottom">
+            <p>© 2026 PETR V KLECI • All rights reserved</p>
+        </div>
+
+    </div>
+</footer>
+
+<script src="script.js">
+
+</script>
+</body>
+</html>
