@@ -1,4 +1,1 @@
-# Zablokuje přímý přístup k tomuto adresáři přes URL (funguje na Apache).
-# Soubory uvnitř (config.php, d1.php) se stejně smí načítat jen ze skriptů (require),
-# tohle je jen dodatečná pojistka.
 Require all denied
