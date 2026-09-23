@@ -47,7 +47,6 @@ document.addEventListener('DOMContentLoaded', () => {
         navToggle.setAttribute('aria-expanded', false);
     }));
 
-    // --- reveal animace při scrollu ---
     const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
     const revealEls = document.querySelectorAll('.reveal');
     if (reduceMotion) {
