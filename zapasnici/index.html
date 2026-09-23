@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Zápasníci — Petr v kleci</title>
+<meta name="description" content="Přehled všech zápasníků Petr v kleci — profily, bilance a odkazy na jejich stránky.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<div class="bg-pattern" aria-hidden="true"></div>
+
+<!-- ============ NAVIGACE ============ -->
+<!-- Tahle stránka leží o 1 úroveň hlouběji než kořen webu (/zapasnici/index.html),
+     proto "../" k logu a domů — u jednotlivých zápasníků (/zapasnici/jmeno/index.html)
+     to bude "../../", protože ti leží o úroveň hlouběji. -->
+<nav>
+    <div class="logo-container">
+        <a href="../#" class="logo-img" onerror="this.style.display='none'; document.getElementById('logo-text').style.display='block';">
+            <img src="../img/logo-transparent.png" alt="Petr v kleci Logo" class="logo-img" onerror="this.style.display='none'; document.getElementById('logo-text').style.display='block';">
+        </a>
+        <span id="logo-text">PETR V KLECI</span>
+    </div>
+
+    <div class="nav-links" id="navLinks">
+        <a href="../#">Domů</a>
+        <a href="https://petrvkleci.fun/live/" target="_blank">Živě</a>
+    </div>
+
+    <button class="nav-toggle" id="navToggle" aria-label="Otevřít menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+    </button>
+</nav>
+
+<main>
+    <section id="roster">
+        <div class="wrap">
+            <div class="section-head reveal">
+                <h2>Zápasníci</h2>
+                <p>Kompletní přehled všech zápasníků Petr v kleci, seřazený podle počtu odzápasených zápasů.</p>
+            </div>
+            <div class="roster-grid reveal" id="rosterGrid"></div>
+        </div>
+    </section>
+</main>
+
+<!-- ============ PATIČKA ============ -->
+<footer class="footer">
+    <div class="footer-container">
+
+        <div class="footer-contact">
+            <a href="../files/prohlaseni_petr_v_kleci.pdf" target="_blank">Disclaimer</a> |
+            <a href="mailto:petrvkleci@petrvkleci.fun">E-Mail</a> |
+            <a href="https://instagram.petrvkleci.fun" target="_blank">Instagram</a> |
+            <a href="https://youtube.petrvkleci.fun" target="_blank">YouTube</a>
+        </div>
+
+        <div class="footer-bottom">
+            <p>© 2026 PETR V KLECI • All rights reserved</p>
+        </div>
+
+    </div>
+</footer>
+
+<script src="script.js" defer></script>
+</body>
+</html>

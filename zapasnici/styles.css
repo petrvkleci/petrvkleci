@@ -1,7 +1,3 @@
-
-/* ============================================
-   1) PROMĚNNÉ / BARVY — zadaná paleta + doplňky
-   ============================================ */
 :root {
     --bg-color: #1a1622;
     --surface-color: #272236;
@@ -13,14 +9,13 @@
     --glass-border: rgba(157, 78, 221, 0.3);
     --nav-height: 70px;
 
-    /* doplněné odstíny pro kontrast (prohry / zvýraznění) */
     --accent-warn: #ff5c6c;
     --accent-warn-glow: rgba(255, 92, 108, 0.5);
     --accent-soft: #c299f0;
 
-    --radius-lg: 20px;  /* panely, foto */
-    --radius-md: 14px;  /* řádky, karty */
-    --radius-sm: 10px;  /* tlačítka */
+    --radius-lg: 20px;  
+    --radius-md: 14px; 
+    --radius-sm: 10px;  
     --container: 1120px;
 }
 
@@ -60,7 +55,6 @@ h1, h2, h3, .display {
     outline-offset: 3px;
 }
 
-/* jemný hexagonální/oktagonový vzor v pozadí, evokující klec */
 .bg-pattern {
     position: fixed;
     inset: 0;
@@ -75,16 +69,12 @@ h1, h2, h3, .display {
             mask-image: radial-gradient(ellipse 80% 60% at 50% 0%, #000 10%, transparent 70%);
 }
 
-/* obecný zaoblený panel */
 .panel {
     background: var(--surface-color);
     border: 1px solid var(--glass-border);
     border-radius: var(--radius-lg);
 }
 
-/* ============================================
-   2) NAVIGACE — sdílené napříč weby, neměnit
-   ============================================ */
 nav {
     position: fixed;
     top: 0; width: 100%; height: var(--nav-height);
@@ -106,7 +96,6 @@ nav {
 }
 .nav-links a:hover { color: var(--accent); text-shadow: 0 0 10px var(--accent-glow); }
 
-/* --- doplňkové, jen pro tuto stránku (mobilní menu + zvýraznění aktivní sekce) --- */
 .nav-links a.active { color: var(--accent); text-shadow: 0 0 10px var(--accent-glow); }
 
 #logo-text { display: none; font-family: 'Bebas Neue', sans-serif; font-size: 1.4rem; letter-spacing: 0.06em; color: var(--text-main); }
@@ -122,9 +111,6 @@ nav {
 }
 .nav-toggle span { width: 24px; height: 2px; background: var(--text-main); display: block; }
 
-/* ============================================
-   3) HERO
-   ============================================ */
 .hero {
     position: relative;
     z-index: 1;
@@ -264,9 +250,6 @@ nav {
     padding: 6px 14px;
 }
 
-/* ============================================
-   4) PÁS "TALE OF THE TAPE"
-   ============================================ */
 .tape {
     position: relative;
     z-index: 1;
@@ -296,9 +279,6 @@ nav {
     margin-top: 2px;
 }
 
-/* ============================================
-   5) SEKCE — obecně
-   ============================================ */
 section { position: relative; z-index: 1; padding: 6.5rem 0; }
 
 .section-head { max-width: 60ch; margin-bottom: 3rem; }
@@ -308,9 +288,6 @@ section { position: relative; z-index: 1; padding: 6.5rem 0; }
 }
 .section-head p { color: var(--text-muted); margin-top: 0.7rem; font-size: 1.02rem; }
 
-/* ============================================
-   6) STATISTIKY — koláčový graf + metody
-   ============================================ */
 .stats-grid {
     display: grid;
     grid-template-columns: 0.9fr 1.1fr;
@@ -362,9 +339,6 @@ section { position: relative; z-index: 1; padding: 6.5rem 0; }
 .m-bar-track { height: 8px; background: var(--bg-color); border-radius: 6px; overflow: hidden; }
 .m-bar-fill { height: 100%; width: 0%; border-radius: 6px; transition: width 1.1s cubic-bezier(.2,.7,.2,1); }
 
-/* ============================================
-   7) POSLEDNÍ ZÁPASY
-   ============================================ */
 .fight-list { display: flex; flex-direction: column; gap: 10px; }
 .fight-row {
     display: grid;
@@ -398,9 +372,6 @@ section { position: relative; z-index: 1; padding: 6.5rem 0; }
 .fight-event { color: var(--text-muted); font-size: 0.86rem; text-align: right; }
 .fight-event b { display: block; color: var(--text-main); font-weight: 500; }
 
-/* ============================================
-   8) O MNĚ
-   ============================================ */
 .about-grid {
     display: grid;
     grid-template-columns: 1.3fr 0.9fr;
@@ -428,9 +399,6 @@ section { position: relative; z-index: 1; padding: 6.5rem 0; }
 .facts .frow span:first-child { color: var(--text-muted); }
 .facts .frow span:last-child { font-weight: 600; }
 
-/* ============================================
-   9) PATIČKA — sdílená napříč weby, neměnit
-   ============================================ */
 footer {
     position: relative;
     z-index: 1;
@@ -465,9 +433,6 @@ footer {
     color: var(--accent);
 }
 
-/* ============================================
-   10) ANIMACE VSTUPU + REVEAL
-   ============================================ */
 .reveal { opacity: 0; transform: translateY(18px); transition: opacity 0.7s ease, transform 0.7s ease; }
 .reveal.in { opacity: 1; transform: translateY(0); }
 
@@ -485,9 +450,6 @@ footer {
     .m-bar-fill { transition: none !important; }
 }
 
-/* ============================================
-   11) RESPONZIVITA
-   ============================================ */
 @media (max-width: 920px) {
     .hero .wrap { grid-template-columns: 1fr; }
     .hero-photo-wrap { max-width: 300px; margin: 0 auto; order: -1; }
@@ -516,4 +478,73 @@ footer {
     .nav-toggle { display: flex; }
     .tape .wrap { grid-template-columns: repeat(2, 1fr); }
     .tape-item:nth-child(2n+1) { border-left: none; }
+}
+
+/* ============================================================
+   DOPLNĚNO PRO /zapasnici/index.html (přehled zápasníků)
+   Nic z pravidel výše se neupravovalo — tohle je jen přidané navíc.
+   ============================================================ */
+
+main { position: relative; z-index: 1; padding-top: var(--nav-height); }
+
+.roster-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(230px, 1fr));
+    gap: 1.6rem;
+}
+
+.roster-card {
+    display: block;
+    padding: 1.8rem 1.4rem;
+    background: var(--surface-color);
+    border: 1px solid var(--glass-border);
+    border-radius: var(--radius-lg);
+    text-align: center;
+    transition: transform 0.2s ease, border-color 0.2s ease, background 0.2s ease;
+}
+.roster-card:hover { transform: translateY(-4px); border-color: var(--accent); background: var(--surface-hover); }
+
+.roster-rank {
+    display: inline-block;
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 0.85rem;
+    letter-spacing: 0.05em;
+    color: var(--accent-soft);
+    background: rgba(157, 78, 221, 0.14);
+    padding: 3px 12px;
+    border-radius: 999px;
+    margin-bottom: 1.1rem;
+}
+
+.roster-photo-wrap {
+    width: 128px; height: 128px;
+    margin: 0 auto 1.2rem;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 1px solid var(--glass-border);
+    background: linear-gradient(155deg, var(--surface-hover), var(--bg-color));
+}
+.roster-photo-wrap img { width: 100%; height: 100%; object-fit: cover; }
+
+.roster-name {
+    font-size: 1.5rem;
+    text-transform: uppercase;
+    margin-bottom: 0.9rem;
+}
+
+.roster-record { display: flex; justify-content: center; gap: 1.1rem; margin-bottom: 0.6rem; }
+.roster-record div { text-align: center; }
+.roster-record .num {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 1.3rem;
+    color: var(--text-main);
+}
+.roster-record .num.win { color: var(--accent); }
+.roster-record .num.loss { color: var(--accent-warn); }
+.roster-record .lbl { font-size: 0.66rem; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.04em; }
+
+.roster-fights { font-size: 0.82rem; color: var(--text-muted); }
+
+@media (max-width: 480px) {
+    .roster-grid { grid-template-columns: repeat(2, 1fr); }
 }
