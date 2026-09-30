@@ -16,7 +16,6 @@ function fightsWord(n) {
 document.addEventListener('DOMContentLoaded', () => {
     const grid = document.getElementById('rosterGrid');
 
-    // seřadí od nejvíc zápasů; při shodě zůstává pořadí z pole výše
     const sorted = [...rosterData].sort((a, b) => b.fights - a.fights);
 
     grid.innerHTML = sorted.map((f, i) => `
@@ -35,7 +34,6 @@ document.addEventListener('DOMContentLoaded', () => {
         </a>
     `).join('');
 
-    // --- mobilní menu (stejné chování jako na zbytku webu) ---
     const navToggle = document.getElementById('navToggle');
     const navLinks = document.getElementById('navLinks');
     navToggle.addEventListener('click', () => {
