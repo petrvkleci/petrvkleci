@@ -27,8 +27,8 @@
         };
 
 (function(){
-  const target=new Date('2026-10-30T20:00:00');
-  const ids=['cdDays','cdHours','cdMins','cdSecs'];
+  const target=new Date('2027-09-01T20:00:00');
+  const ids=['cdDays','cdHours','cdMins','cdSecs','cdMiliSecs'];
   let prev=[];
   function tick(){
     const diff=target-new Date();
@@ -37,7 +37,8 @@
       Math.floor(diff/864e5),
       Math.floor((diff%864e5)/36e5),
       Math.floor((diff%36e5)/6e4),
-      Math.floor((diff%6e4)/1e3)
+      Math.floor((diff%6e4)/1e3),
+      Math.floor((diff%1e3/10))
     ];
     ids.forEach((id,i)=>{
       const el=document.getElementById(id);
@@ -50,5 +51,5 @@
     });
   }
   tick();
-  setInterval(tick,1000);
+  setInterval(tick,1);
 })();

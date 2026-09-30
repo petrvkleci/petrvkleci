@@ -350,12 +350,31 @@ main a {
     left: 50%;
     bottom: 50px;    
     transform: translateX(-50%);
-    font-size: .85rem;
+    font-size: .95rem;
     font-weight: 900;
     letter-spacing: 4px;
     color: var(--accent);
     text-transform: uppercase;
     opacity: .9;
+}
+
+.rules {
+    position: absolute;
+    left: 50%;
+    bottom: 18px;
+    transform: translateX(-50%);
+
+    padding: 8px 22px;
+    font-weight: 900;
+    font-size: .75rem;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+
+    color: #fff;
+
+
+    z-index: 5;
+    white-space: nowrap;
 }
 
 .live {
